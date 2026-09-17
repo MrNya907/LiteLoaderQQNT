@@ -21,7 +21,7 @@ function showErrorDialog(title, message) {
 function getDestPath(manifest_text) {
     const { slug } = JSON.parse(manifest_text);
     let dest_path = path.join(LiteLoader.path.plugins, slug);
-    if (slug in LiteLoader.plugins) LiteLoader.api.plugin.delete(slug, [false, false], false);
+    if (slug in LiteLoader.plugins) LiteLoader.api.plugin.delete(slug, false, false);
     if (fs.existsSync(dest_path)) dest_path += `_${Date.now()}`;
     return dest_path;
 }
@@ -101,7 +101,7 @@ exports.getPluginConfig = (slug, config) => {
 exports.scanPluginDirectory = () => {
     fs.mkdirSync(LiteLoader.path.plugins, { recursive: true });
     return fs.readdirSync(LiteLoader.path.plugins, { withFileTypes: true })
-        .map(dirent => path.join(dirent.path, dirent.name, "manifest.json"))
+        .map(dirent => path.join(LiteLoader.path.plugins, dirent.name, "manifest.json"))
         .filter(manifest => fs.existsSync(manifest))
         .map(manifest => ({
             path: path.dirname(manifest),
