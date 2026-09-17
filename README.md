@@ -1,7 +1,7 @@
 # LiteLoaderQQNT
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/LiteLoader/LiteLoaderQQNT?logo=github)](https://github.com/MrNya907/LiteLoaderQQNT/releases)
+[![GitHub release](https://img.shields.io/github/v/release/LiteLoaderQQNT/LiteLoaderQQNT?logo=github)](https://github.com/MrNya907/LiteLoaderQQNT/releases)
 [![Follow on Telegram](https://img.shields.io/badge/Follow-Telegram-blue?logo=telegram)](https://t.me/LiteLoaderQQNT)
 
 > 轻量 · 简洁 · 开源 · 福瑞
