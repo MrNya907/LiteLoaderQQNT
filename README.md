@@ -96,3 +96,7 @@ LiteLoaderQQNT 是 QQNT 的插件加载器，一般在 QQNT 的环境内简称�
 ## 许可证
 
 LiteLoaderQQNT 采用 [MIT 许可证](./LICENSE) 进行开源。
+
+## 感谢
+
+感谢原LiteloaderQQNT所有开发者和贡献着的提交。
