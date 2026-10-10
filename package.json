@@ -1,6 +1,6 @@
 {
     "name": "liteloader-qqnt",
-    "version": "5.2.0",
+    "version": "5.2.1",
     "description": "QQNT 插件加载器 LiteLoaderQQNT —— 轻量 · 简洁 · 开源 · 福瑞 · By Nya_Fish 适配新版喵~",
     "main": "./src/main.js",
     "private": true,
