@@ -7,6 +7,13 @@ const liteloader_setting_view = document.createElement("div");
 function init() {
     const setting_view = document.querySelector(".setting-main .q-scroll-view");
     const setting_title = document.querySelector(".setting-main .setting-title");
+    // Keep QQ's title nodes intact: their order is managed by Vue and varies by version.
+    const liteloader_setting_title = setting_title.cloneNode(false);
+    liteloader_setting_title.removeAttribute("id");
+    liteloader_setting_title.classList.add("liteloader-setting-title");
+    liteloader_setting_title.style.setProperty("display", "none", "important");
+    setting_title.after(liteloader_setting_title);
+    let title_display = null;
     liteloader_nav_bar.classList.add("nav-bar", "liteloader");
     liteloader_setting_view.classList.add("q-scroll-view", "scroll-view--show-scrollbar", "liteloader");
     liteloader_setting_view.style.display = "none";
@@ -17,15 +24,28 @@ function init() {
         if (nav_item) {
             // 内容显示
             if (nav_item.parentElement.classList.contains("liteloader")) {
+                if (!title_display) {
+                    title_display = {
+                        value: setting_title.style.getPropertyValue("display"),
+                        priority: setting_title.style.getPropertyPriority("display")
+                    };
+                }
+                setting_title.style.setProperty("display", "none", "important");
+                liteloader_setting_title.textContent = nav_item.querySelector(".name").textContent;
+                liteloader_setting_title.style.setProperty("display", title_display.value, title_display.priority);
                 setting_view.style.display = "none";
                 liteloader_setting_view.style.display = "block";
             }
             else {
+                if (title_display) {
+                    setting_title.style.setProperty("display", title_display.value, title_display.priority);
+                    title_display = null;
+                }
+                liteloader_setting_title.style.setProperty("display", "none", "important");
                 setting_view.style.display = "block";
                 liteloader_setting_view.style.display = "none";
             }
             // 重新设定激活状态
-            setting_title.childNodes[1].textContent = nav_item.querySelector(".name").textContent;
             document.querySelectorAll(".setting-tab .nav-item").forEach(element => {
                 element.classList.remove("nav-item-active");
             });
