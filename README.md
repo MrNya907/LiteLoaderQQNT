@@ -99,4 +99,4 @@ LiteLoaderQQNT 采用 [MIT 许可证](./LICENSE) 进行开源。
 
 ## 感谢
 
-感谢原LiteloaderQQNT所有开发者和贡献着的提交。
+LiteloaderQQNT所有开发者和贡献着的提交。
