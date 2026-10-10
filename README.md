@@ -1,4 +1,4 @@
-# LiteLoaderQQNT
+# LiteLoaderQQNT 适配最新版 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/MrNya907/LiteLoaderQQNT?logo=github)](https://github.com/MrNya907/LiteLoaderQQNT/releases)
